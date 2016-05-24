@@ -102,8 +102,8 @@ We have 100 visitor to website and 80% are happy with the information
    Then he will see the politicians who has a name that matches the entered word
  
  
-14. ** As a user I want to see upcoming event for a particular Politician.
+14. **As a user I want to see upcoming event for a particular Politician**
 
-   Given a user goes to the politician360 homepage
-   He selects a politician.
-   For that politician he is able to see his past events and upcoming events.
+   Given a user goes to the politician360 homepage   
+   He selects a politician.  
+   For that politician he is able to see his past events and upcoming events.  
