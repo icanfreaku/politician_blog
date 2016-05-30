@@ -33,7 +33,7 @@ _Technologies_
 
 ## System Design
 
-![alt text](https://trello-attachments.s3.amazonaws.com/573e13233743a943f93d3de7/960x720/d76a6865cac9892870334c2d2f3499ef/System_Design_Diagram.png "System Design")
+![alt text]https://trello-attachments.s3.amazonaws.com/57446bcb83ffcc729f211926/960x720/5a99e4fd92b2d512f6809b787bdc7a48/System_Design_Diagram_(1).png "System Design")
 
 
 ## Next week Work:
