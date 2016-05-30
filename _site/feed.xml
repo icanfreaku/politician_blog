@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Politician 360</title>
+    <description>Welcome to my awesome blog.
+</description>
+    <link>/Politician360-Team/</link>
+    <atom:link href="/Politician360-Team/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 30 May 2016 13:02:45 +0100</pubDate>
+    <lastBuildDate>Mon, 30 May 2016 13:02:45 +0100</lastBuildDate>
+    <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>First Blog</title>
+        <description>&lt;h2 id=&quot;project-idea&quot;&gt;Project Idea:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The motive is to provide a platform with trustful information about the politicians to people.&lt;/li&gt;
+  &lt;li&gt;People can have all the information at one place,so that they can know more about the individual.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;use-cases&quot;&gt;Use Cases:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;To list all the politicians of Ireland.&lt;/li&gt;
+  &lt;li&gt;To show the corruption index of politicians.&lt;/li&gt;
+  &lt;li&gt;To find out the positive and negative aspect of a politicians through different news sources.&lt;/li&gt;
+  &lt;li&gt;To make comparisions between politicians.&lt;/li&gt;
+  &lt;li&gt;To find Politicians working in particular field. e.g education,agriculture,transportation.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;data-sources-and-technologies&quot;&gt;Data Sources and Technologies:&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Data Sources&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Various websites and newspaper RSS feed.&lt;/li&gt;
+  &lt;li&gt;Politicians social account.&lt;/li&gt;
+  &lt;li&gt;Newspaper such as Irsihtimes,thesun.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;em&gt;Technologies&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Angular JS&lt;/li&gt;
+  &lt;li&gt;Django&lt;/li&gt;
+  &lt;li&gt;Python&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;system-design&quot;&gt;System Design&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://trello-attachments.s3.amazonaws.com/573e13233743a943f93d3de7/960x720/d76a6865cac9892870334c2d2f3499ef/System_Design_Diagram.png&quot; alt=&quot;alt text&quot; title=&quot;System Design&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;next-week-work&quot;&gt;Next week Work:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Over the next week we will be finalizing with the MVP,project plan and project infrastructure.&lt;/li&gt;
+  &lt;li&gt;Designing our homepage so that we can start working on our first prototype.&lt;/li&gt;
+  &lt;li&gt;In our first sprint we will try to get all the list of politicians on the homepage.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 30 May 2016 00:00:00 +0100</pubDate>
+        <link>/Politician360-Team/2016/first-blog</link>
+        <guid isPermaLink="true">/Politician360-Team/2016/first-blog</guid>
+        
+        
+        <category>blog</category>
+        
+      </item>
+    
+  </channel>
+</rss>
