@@ -2,7 +2,7 @@
 layout: post
 title: First Blog
 categories: blog
-post_author: Sohaib Ahmad 
+author: Sohaib Ahmad 
 ---
 
 ## Project Idea:
