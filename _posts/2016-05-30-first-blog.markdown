@@ -2,6 +2,7 @@
 layout: post
 title: First Blog
 categories: blog
+post_author: Geoff Blair
 ---
 
 ## Project Idea:
