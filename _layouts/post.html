@@ -8,15 +8,15 @@ layout: default
        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
           {{ page.date | date: "%b %-d, %Y" }}
        </time>
-       {% if page.author %} •
+       {% if post.author %} •
           <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span itemprop="name">{{ page.author }}</span>
+            <span itemprop="name">{{ post.author }}</span>
           </span>
        {% endif %}
+	   by 
         | <span class="time">
-            {{ page.content | number_of_words | divided_by:180 }}
+            {{ post.author }}
           </span>
-           Minute Read
     </p>
   </header>
   <div class="post-content" itemprop="articleBody">
