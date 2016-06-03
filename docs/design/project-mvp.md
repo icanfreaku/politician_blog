@@ -10,11 +10,11 @@ We assess people knowledge about politicians when using the web or our system. O
 
 ##User Stories
 
-1. **As a user I want to see the latest news and twitters about politicians so I get it in one place for easy access**
+1. **As a user I want to see the latest news and tweets about politicians so I get it in one place for easy access**
     
     Given a user goes to the politician360 website   
     When he goes to the homepage   
-    Then he will see the latest news and twitters about the politicians   
+    Then he will see the latest news and tweets about the politicians   
 
 
 2. **As a user I want to see the TOP 10 most popular politicians so I can know who they are**
@@ -24,7 +24,7 @@ We assess people knowledge about politicians when using the web or our system. O
     Then he will see a list with the TOP 10 most popular politicians  
 
 
-3. **As a user I want to see a rank of all politicians by popularity(number of articles and twitters), sentiment(negative, positive and neutral) and corruption(number of articles and twitters talking about corruption)**
+3. **As a user I want to see a rank of all politicians by popularity(number of articles and tweets), sentiment(negative, positive and neutral) and corruption(number of articles and tweets talking about corruption)**
 
     Given a user goes to the politicians360 website  
     When they click on the Rank link  
@@ -39,11 +39,11 @@ We assess people knowledge about politicians when using the web or our system. O
     Then he will see more details about him    
 
 
-5. **As a user I want to see the news and twitters related to a politician so I can trust on the rank info**
+5. **As a user I want to see the news and tweets related to a politician so I can trust on the rank info**
     
     Given a user goes to the politicians360 rank page  
     When he selects a politician  
-    Then he will see the news and twitters related to the politician  
+    Then he will see the news and tweets related to the politician  
 
 
 
