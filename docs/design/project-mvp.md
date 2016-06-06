@@ -24,7 +24,7 @@ We assess people knowledge about politicians when using the web or our system. O
     Then he will see a list with the TOP 10 most popular politicians  
 
 
-3. **As a user I want to see a rank of all politicians by popularity(number of articles and tweets), sentiment(negative, positive and neutral) and corruption(number of articles and tweets talking about corruption)**
+3. **As a user I want to see a rank of all politicians by popularity(number of articles and tweets), sentiment(negative, positive and neutral) and number of articles related to corruption(number of articles and tweets talking about corruption)**
 
     Given a user goes to the politicians360 website  
     When they click on the Rank link  
