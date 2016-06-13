@@ -14,11 +14,11 @@ Our final project idea is to provide trustful information about the politician t
 
 ![alt text](https://trello-attachments.s3.amazonaws.com/574da9b98c679fb319d73d50/574x487/970c420e9260e306d58756c04bbb97c1/Picture1.png "HOME PAGE DESIGN") 
 
-## Rank page:
+### Rank page:
 
 ![alt text](https://trello-attachments.s3.amazonaws.com/574da9b98c679fb319d73d50/569x549/d9bce09baabd7aaeea1a07d5481508c8/Picture2.png "Rank Page Design") 
  
-## Details page:
+### Details page:
  
 ![alt text](https://trello-attachments.s3.amazonaws.com/574da9b98c679fb319d73d50/573x540/6c386dce4d3bcfb3510fc4e5342a0cf7/Picture3.png "Details Page Design") 
  
