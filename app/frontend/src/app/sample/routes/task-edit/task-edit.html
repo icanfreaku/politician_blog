@@ -1,0 +1,13 @@
+<div class="task-list panel panel-default">
+	<div class="panel-heading">
+		<h3 class="panel-title">Update task</h3>
+	</div>
+	<div class="panel-body">
+		<form name="form" ng-submit="ctrl.update(form)">
+			<div class="form-group"> 
+				<input type="text" placeholder="Enter a task..." ng-model="taskData.text" required="required" class="form-control"/>
+				<button type="submit" ng-disabled="!form.$valid" class="btn btn-primary">Update task</button>
+			</div>
+		</form>
+	</div>
+</div>
