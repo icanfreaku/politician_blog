@@ -10,6 +10,11 @@ db:
         - dbdata
     ports:
         - "9432:5432"
+ek:
+  image: nshou/elasticsearch-kibana
+  ports:
+    - "5601:5601"
+    - "9200:9200"
 frontend:
     build: frontend/
     command: gulp develop
@@ -35,5 +40,6 @@ django:
         - "./media:/media"
     links:
         - db
+        - ek
     environment:
         DJANGO_SETTINGS_MODULE: conf.settings

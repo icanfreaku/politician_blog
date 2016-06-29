@@ -19,7 +19,7 @@ class Politician(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            base_slug = slug = slugify(self.last_name + self.first_name)
+            base_slug = slug = slugify(self.first_name + "-" + self.last_name)
             i = 1
             while (Politician.objects.filter(slug=slug).exists()):
                 slug = '%s%s' % (base_slug, i)
