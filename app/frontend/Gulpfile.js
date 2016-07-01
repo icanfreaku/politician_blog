@@ -131,7 +131,7 @@ gulp.task('watch', function () {
     livereload.listen();
     gulp.watch(PATHS.STYL_ALL, ['stylus']);
     gulp.watch(PATHS.JS, ['javascript']);
-    gulp.watch(PATHS.JADE, ['templates']);
+    gulp.watch(PATHS.HTML, ['templates']);
 });
 
 gulp.task('build', function (cb) {

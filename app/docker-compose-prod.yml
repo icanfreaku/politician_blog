@@ -7,7 +7,12 @@ db:
         file: common.yml
         service: db_base
     volumes_from:
-        - dbdata    
+        - dbdata
+ek:
+  image: nshou/elasticsearch-kibana
+  ports:
+    - "5601:5601"
+    - "9200:9200"          
 djangoprod:
     extends: 
         file: common.yml
@@ -23,6 +28,7 @@ djangoprod:
         - "./logs/app:/tmp/logs/app"
     links:
         - db
+        - ek
     environment:
         DJANGO_SETTINGS_MODULE: conf.settings_prod
         NUM_WORKERS: 4
