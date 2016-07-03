@@ -1,0 +1,181 @@
+body {
+    background-color: white;
+    color: #000305;
+    font-family: Arial, 'Lucida Sans Unicode';
+    line-height: 1.5;
+    text-align: left;
+    width: 98%;
+}
+
+.body {
+    margin: 0 auto;
+    /*    width: 70%;*/
+    clear: both;
+}
+
+.mainheader img {
+    width: 100%;
+    height: 37%;
+    margin: 2% 0;
+    margin-top: 0;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 98%;
+}
+
+.politician360Header {
+    background-color: #AC2832;
+    height: 70px;
+    font-size: 20px;
+    border-radius: 25px 25px 0 0;
+}
+
+.politician360Header h1 {
+    padding-left: 15px;
+    font-family: monospace;
+    font-style: oblique;
+}
+
+a:link,
+a:visited {
+    color: aqua;
+}
+
+a:hover,
+a:active {
+    color: aquamarine;
+}
+
+.mainheader nav a:link,
+.mainheader nav a:visited {
+    color: #FFF;
+    display: inline-block;
+    padding: 10px 25px;
+    height: 20px;
+}
+
+.mainheader nav a:hover,
+.mainheader nav a:active,
+.mainheader nav .active a:link,
+.mainheader nav .active a:visited {
+    background-color: bisque;
+    text-shadow: none;
+}
+
+.mainheader nav ul li a {
+    /*    border-radius: 5px;*/
+    text-decoration: none;
+}
+
+.mainHeader nav ul li {
+    list-style: none;
+    display: inline;
+    float: left;
+}
+
+.mainheader nav ul li {
+    float: left;
+    display: inline;
+}
+
+.mainheader nav {
+    background-color: #B94629;
+    height: 40px;
+    margin-top: -20px;
+}
+
+.mainContainer {
+    /*    background-color: aqua;*/
+    height: 500px;
+}
+
+.mainContainer header {
+    background-color: coral;
+    /*    border-radius: 20px 20px 0 0;*/
+    margin-top: -20px;
+}
+
+.mainContainer header h3 {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: center;
+}
+
+
+/*
+.latestNewsHeader {
+    width: 470px;
+}
+*/
+
+.mainContainer div {
+    border: 2px solid black;
+}
+
+.latestNews {
+    background-color: #F3FAB6;
+    width: 470px;
+    height: 700px;
+    float: left;
+    margin-top: -20px;
+    /*    border-radius: 20px 20px 0 0;*/
+}
+
+
+/*
+.latestTweetsHeader {
+    width: 470px;
+    float: left;
+    margin-left: 10px;
+    margin-top: -73px;
+}
+*/
+
+.latestTweets {
+    background-color: #F3FAB6;
+    width: 470px;
+    height: 700px;
+    /*    border-radius: 5px;*/
+    float: left;
+    margin-left: 5px;
+    margin-top: -20px;
+    /*    border-radius: 20px 20px 0 0;*/
+}
+
+
+/*
+.rankAreaHeader {
+    width: 362px;
+    float: right;
+    margin-top: -73px;
+}
+*/
+
+.rankArea {
+    background-color: #F3FAB6;
+    width: 360px;
+    height: 700px;
+    float: right;
+    margin-left: 5px;
+    margin-top: -20px;
+    /*    border-radius: 20px 20px 0 0;*/
+}
+
+.mainfooter {
+    width: 100%;
+    height: 40px;
+    float: left;
+    background-color: #3B3738;
+    margin-top: 1px;
+    margin-bottom: 2%;
+    border-radius: 0 0 25px 25px;
+}
+
+.mainfooter p {
+    width: 92%;
+    margin: 8px auto;
+    color: #fff;
+}
