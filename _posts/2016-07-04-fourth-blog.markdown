@@ -36,7 +36,7 @@ We are currently on the implementation phase of our project as we have already d
 
 ## Progress
 
-So far we have implemented the twitter collector which uses the keyword option from the api to filter the tweets by the name of the politicians. Then it gets the sentiment related to the tweet for afterwards send the tweet with its sentiment to the elasticsearch index. We have been collecting it for almost a week and have good amount of tweets. We are using Kibana to have an overall analyse of the data. See image bellow where the have a chart showing the amount of tweets per sentiment (Negative, Positive and Neutral). 
+So far we have implemented the twitter collector which uses the keyword option from the api to filter the tweets by the name of the politicians. Then it gets the sentiment related to the tweet for afterwards send the tweet with its sentiment to the elasticsearch index. We have been collecting it for almost a week and have good amount of tweets. We are using Kibana to have an overall analyse of the data. See image bellow where we have a chart showing the amount of tweets per sentiment (Negative, Positive and Neutral). 
 
 
 ![alt text](https://trello-attachments.s3.amazonaws.com/576ab9dd2f05d019bb1abe0e/2874x1540/e6d4404ec02d5ae71bf11db4632bdb29/Screen_Shot_2016-07-04_at_3.05.56_PM.png " Sentiment pizza chart")
