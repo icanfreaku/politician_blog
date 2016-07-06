@@ -33,6 +33,7 @@ djangoprod:
     links:
         - db
         - ek
+        - redis
     environment:
         DJANGO_SETTINGS_MODULE: conf.settings_prod
         NUM_WORKERS: 4
