@@ -8,10 +8,35 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.8/ref/settings/
 """
 
+from datetime import timedelta
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
+
+# Celery settings
+
+BROKER_URL = 'redis://redis:6379/0'
+
+#: Only add pickle to this list if your broker is secured
+#: from unwanted access (see userguide/security.html)
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+
+
+CELERYBEAT_SCHEDULE = {
+    'collectRSS-every-15-minutes': {
+        'task': 'apps.sampleapp.tasks.collectRSS',
+        'schedule': timedelta(minutes=15)
+    },
+}
+
+import logging
+logger = logging.getLogger(__name__)
+
+CELERY_TIMEZONE = 'UTC'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/

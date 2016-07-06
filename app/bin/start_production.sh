@@ -9,6 +9,7 @@ for i in {30..0}; do
         if [[ $serverResponse != *"Connection refused"* ]]
         then
                 docker-compose -f $DOCKER_CONFIG run -d djangoprod python3 manage.py twitter_stream_collector
+                docker-compose -f $DOCKER_CONFIG run -d djangoprod celery -A apps.sampleapp worker -B -l info
                 break;
         else
                 sleep 1
