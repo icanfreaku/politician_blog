@@ -8,6 +8,10 @@ db:
         service: db_base
     volumes_from:
         - dbdata
+redis:
+    image: redis
+    ports:
+        - "6379:6379"
 ek:
   image: nshou/elasticsearch-kibana
   ports:
@@ -29,6 +33,7 @@ djangoprod:
     links:
         - db
         - ek
+        - redis
     environment:
         DJANGO_SETTINGS_MODULE: conf.settings_prod
         NUM_WORKERS: 4
