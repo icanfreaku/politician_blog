@@ -27,9 +27,17 @@ CELERY_RESULT_SERIALIZER = 'json'
 
 
 CELERYBEAT_SCHEDULE = {
+    """'buildStats-every-5-minutes': {
+        'task': 'apps.sampleapp.tasks.buildStats',
+        'schedule': timedelta(seconds=30)
+    },"""
     'collectRSS-every-15-minutes': {
         'task': 'apps.sampleapp.tasks.collectRSS',
         'schedule': timedelta(minutes=15)
+    },
+    'loadPoliticians-every-24-hours': {
+        'task': 'apps.sampleapp.tasks.loadPoliticians',
+        'schedule': timedelta(hours=24)
     },
 }
 
