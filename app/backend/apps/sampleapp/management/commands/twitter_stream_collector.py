@@ -5,6 +5,8 @@ from tweepy import OAuthHandler
 from tweepy import Stream
 from textblob import TextBlob
 from elasticsearch import Elasticsearch
+from apps.sampleapp.models import Politician
+
 
 # import twitter keys and tokens
 consumer_key = "iaWUFjCmj8pkQHrB5n7Ex73x6"
@@ -61,6 +63,21 @@ class Command(BaseCommand):
     help = 'Start the collection of tweets from twitter stream'
 
     def handle(self, *args, **options):
+        
+        politicians = Politician.objects.all();
+
+        politician_keywords = []
+        for politician in politicians:
+            politician_keywords.append(politician.first_name + " " + politician.last_name)
+            if politician.twitter_url:
+                indexSlash = politician.twitter_url.rfind("/")
+                indexQuestionMark = politician.twitter_url.rfind("?")
+                if indexQuestionMark != -1:
+                    twitter = politician.twitter_url[indexSlash+1:indexQuestionMark]
+                else:
+                    twitter = politician.twitter_url[indexSlash+1:]
+                politician_keywords.append(twitter)
+        
         # create instance of the tweepy tweet stream listener
         listener = TweetStreamListener()
 
@@ -71,5 +88,7 @@ class Command(BaseCommand):
         # create instance of the tweepy stream
         stream = Stream(auth, listener)
 
+
         # search twitter for "congress" keyword
-        stream.filter(track=["Bobby Aylward", "Pat Deering", "Kathleen Funchion", "John McGuinness", "John Paul Phelan", "Heather Humpries", "Caoimhghin O'Caolain", "Brendan Smith", "Niamh Smyth", "Pat Breen", "Joe Carey", "Timmy Dooley", "Michael Harty", "Pat Buckley", "Kevin O'Keeffe", "Sean Sherlock", "David Stanton", "Mick Barry", "Billy Kelleher", "Dara Murphy", "Johnathan O'Brien", "Michael Creed", "Aindrias Moynihan", "Michael Moynihan", "Simon Coveney", "Micheal Martin", "Michael McGrath", "Donnchadh O'Laoghaire", "Michael Collins", "Jim Daly", "Margaret Murphy O'Mahony", "Pearse Doherty", "Pat Gallagher", "Charlie McConalogue", "Joe McHugh", "Thomas Pringle", "Tommy Broughan", "Richard Bruton", "Sean Haughey", "Finian McGrath", "Denise Mitchell", "Eoghan Murphy", "Jim O'Callaghan", "Kate O'Connell", "Eamon Ryan", "Paschal Donohoe", "Mary Lou McDonald", "Maureen O'Sullivan", "Clare Daly", "Alan Farrell", "Darragh O'Brien", "Louise O'Reilly", "Brendan Ryan", "John Curran", "Frances Fitzgerald", "Gino Kenny", "Eoin O'Broin", "Dessie Ellis", "Noel Rock", "Roisin Shortall", "Josepha Madigan", "Catherine Martin", "Shane Ross", "Catherine Byrne", "Joan Collins", "Aengus O'Snodaigh", "Brid Smith", "Colm Brophy", "Sean Crowe", "John Lahart", "Paul Murphy", "Katherine Zappone", "Joan Burton", "Jack Chambers", "Ruth Coppinger", "Leo Varadkar", "Maria Bailey", "Richard Boyd-Barrett", "Mary Mitchell-OConnor", "Sean Canney", "Ciaran Cannon", "Anne Rabbitte", "Catherine Connolly", "Noel Grealish", "Sean Kyne", "Hildegarde Naughten", "Eamon O'Cuiv", "John Brassil", "Martin Ferris", "Brendan Griffin", "Danny Healy Rae", "Michael Healy Rae", "Bernard Durkan", "James Lawless", "Catherine Murphy", "Frank O'Rourke", "Martin Heydon", "Sean O'Fearghaill", "Fiona O'Loughlin", "Charlie Flanagan", "Sean Fleming", "Brian Stanley", "Micheal Noonan", "Willie O'Dea", "Jan O'Sullivan", "Maurice Quinlivan", "Niall Collins", "Tom Neville", "Patrick O'Donovan", "Kevin Boxer Moran", "Peter Burke", "Willie Penrose", "Robert Troy", "Gerry Adams", "Declan Breathnach", "Peter Fitzpatrick", "Imelda Munster", "Fergus O'Dowd", "Dara Calleary", "Lisa Chambers", "Enda Kenny", "Michael Ring", "Thomas Byrne", "Regina Doherty", "Helen McEntee", "Shane Cassells", "Damien English", "Peadar Toibn", "Marcella Corcoran-Kennedy", "Barry Cowen", "Carol Nolan", "Michael Fitzmaurice", "Eugene Murphy", "Denis Naughten", "Martin Kenny", "Marc MacSharry", "Tony McLoughlin", "Eamon Scanlon", "Jackie Cahill", "Seamus Healy", "Alan Kelly", "Michael Lowry", "Mattie McGrath", "Mary Butler", "David Cullinane", "John Deasy", "John Halligan", "James Browne", "Michael D'Arcy", "Brendan Howlin", "Paul Kehoe", "Mick Wallace", "John Brady", "Pat Casey", "Stephen Donnelly", "Andrew Doyle", "Simon Harris"])
+        stream.filter(track=politician_keywords)
+        
