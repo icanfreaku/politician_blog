@@ -19,11 +19,17 @@ logger = get_task_logger(__name__)
 es = Elasticsearch(["ek"])
 
 
-def buildQuery(text, sentiment): 
+def buildQueryRss(text, sentiment): 
   return { "query" : { "bool": { "must": [ { "match" : { "description" : { "query": text, "operator": "and" }}},{ "term": {"sentiment": sentiment} } ]}}}  
+
+def buildQueryTwitter(text, sentiment): 
+  return { "query" : { "bool": { "must": [ { "match" : { "message" : { "query": text, "operator": "and" }}},{ "term": {"sentiment": sentiment} } ]}}}  
+
 
 @shared_task
 def buildStats():
+
+  logger.info("Started building Stats")
 
   rss_exist = es.indices.exists("rss")
   twitter_exist = es.indices.exists("twitter")
@@ -37,8 +43,6 @@ def buildStats():
       # RSS stats
       res = es.search(index="rss", body=buildQuery(full_name, "positive"))
       rss_positive = res['hits']['total']
-
-      logger.info(rss_positive)
       
       res = es.search(index="rss", body=buildQuery(full_name, "negative"))
       rss_negative = res['hits']['total']
@@ -49,13 +53,13 @@ def buildStats():
       rss_total = rss_positive + rss_negative + rss_neutral
 
       # Twitter Stats
-      res = es.search(index="twitter", body=buildQuery(full_name, "positive"))
+      res = es.search(index="twitter", body=buildQueryTwitter(full_name, "positive"))
       twitter_positive = res['hits']['total']
 
-      res = es.search(index="twitter", body=buildQuery(full_name, "negative"))
+      res = es.search(index="twitter", body=buildQueryTwitter(full_name, "negative"))
       twitter_negative = res['hits']['total']
 
-      res = es.search(index="twitter", body=buildQuery(full_name, "neutral"))
+      res = es.search(index="twitter", body=buildQueryTwitter(full_name, "neutral"))
       twitter_neutral = res['hits']['total']
 
       twitter_total = twitter_positive + twitter_negative + twitter_neutral
@@ -81,10 +85,12 @@ def buildStats():
       politician.stats.rss.negative = rss_negative
       politician.stats.rss.positive = rss_positive
       politician.stats.rss.neutral = rss_neutral
+      politician.stats.rss.total = rss_total
 
       politician.stats.twitter.negative = twitter_negative
       politician.stats.twitter.positive = twitter_positive
       politician.stats.twitter.neutral = twitter_neutral
+      politician.stats.twitter.total = twitter_total
 
       politician.stats.total_negative = total_negative;
       politician.stats.total_positive = total_positive;
