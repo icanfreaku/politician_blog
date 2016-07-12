@@ -41,13 +41,13 @@ def buildStats():
       full_name = politician.first_name + " " + politician.last_name
 
       # RSS stats
-      res = es.search(index="rss", body=buildQuery(full_name, "positive"))
+      res = es.search(index="rss", body=buildQueryRss(full_name, "positive"))
       rss_positive = res['hits']['total']
       
-      res = es.search(index="rss", body=buildQuery(full_name, "negative"))
+      res = es.search(index="rss", body=buildQueryRss(full_name, "negative"))
       rss_negative = res['hits']['total']
 
-      res = es.search(index="rss", body=buildQuery(full_name, "neutral"))
+      res = es.search(index="rss", body=buildQueryRss(full_name, "neutral"))
       rss_neutral = res['hits']['total']
 
       rss_total = rss_positive + rss_negative + rss_neutral
