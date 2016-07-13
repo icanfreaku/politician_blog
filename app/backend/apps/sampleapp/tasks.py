@@ -6,6 +6,8 @@ from celery.utils.log import get_task_logger
 from apps.sampleapp.models import Politician
 from apps.sampleapp.models import Stats
 from apps.sampleapp.models import RssStats
+from apps.sampleapp.models import TwitterStats
+
 
 import hashlib
 import json
@@ -16,8 +18,18 @@ logger = get_task_logger(__name__)
 
 es = Elasticsearch(["ek"])
 
+
+def buildQueryRss(text, sentiment): 
+  return { "query" : { "bool": { "must": [ { "match" : { "description" : { "query": text, "operator": "and" }}},{ "term": {"sentiment": sentiment} } ]}}}  
+
+def buildQueryTwitter(text, sentiment): 
+  return { "query" : { "bool": { "must": [ { "match" : { "message" : { "query": text, "operator": "and" }}},{ "term": {"sentiment": sentiment} } ]}}}  
+
+
 @shared_task
 def buildStats():
+
+  logger.info("Started building Stats")
 
   rss_exist = es.indices.exists("rss")
   twitter_exist = es.indices.exists("twitter")
@@ -29,27 +41,25 @@ def buildStats():
       full_name = politician.first_name + " " + politician.last_name
 
       # RSS stats
-      res = es.search(index="rss", body={"query": {"constant_score": {"filter": {  "bool" : { "must" : [ {"term" : { "description" : full_name }}, {"term" : { "sentiment": "neutral" }}]}}}}})
+      res = es.search(index="rss", body=buildQueryRss(full_name, "positive"))
       rss_positive = res['hits']['total']
-
-      logger.info(rss_positive)
-      """
-      res = es.search(index="rss", body={"query": {"term" : { "description" : full_name, "sentiment": "negative" }}})
+      
+      res = es.search(index="rss", body=buildQueryRss(full_name, "negative"))
       rss_negative = res['hits']['total']
 
-      res = es.search(index="rss", body={"query": {"term" : { "description" : full_name, "sentiment": "neutral" }}})
+      res = es.search(index="rss", body=buildQueryRss(full_name, "neutral"))
       rss_neutral = res['hits']['total']
 
       rss_total = rss_positive + rss_negative + rss_neutral
 
       # Twitter Stats
-      res = es.search(index="twitter", body={"query": {"term" : { "message" : full_name, "sentiment": "positive" }}})
+      res = es.search(index="twitter", body=buildQueryTwitter(full_name, "positive"))
       twitter_positive = res['hits']['total']
 
-      res = es.search(index="twitter", body={"query": {"term" : { "message" : full_name, "sentiment": "negative" }}})
+      res = es.search(index="twitter", body=buildQueryTwitter(full_name, "negative"))
       twitter_negative = res['hits']['total']
 
-      res = es.search(index="twitter", body={"query": {"term" : { "message" : full_name, "sentiment": "neutral" }}})
+      res = es.search(index="twitter", body=buildQueryTwitter(full_name, "neutral"))
       twitter_neutral = res['hits']['total']
 
       twitter_total = twitter_positive + twitter_negative + twitter_neutral
@@ -61,31 +71,37 @@ def buildStats():
 
       total = total_positive + total_negative + total_neutral
 
-    if not(politician.stats):
-      stats = Stats()
-      rss = RssStats()
-      rss.save()
-      stats.save()
-      rss.stats_set.add(stats)
-      stats.politician_set.add(politician)
+      if not(politician.stats):
+        stats = Stats()
+        rss = RssStats()
+        twitter = TwitterStats()
+        rss.save()
+        twitter.save()
+        stats.save()
+        rss.stats_set.add(stats)
+        twitter.stats_set.add(stats)
+        stats.politician_set.add(politician)
 
-    politician.stats.rss.negative = rss_negative
-    politician.stats.rss.positive = rss_positive
-    politician.stats.rss.neutral = rss_neutral
+      politician.stats.rss.negative = rss_negative
+      politician.stats.rss.positive = rss_positive
+      politician.stats.rss.neutral = rss_neutral
+      politician.stats.rss.total = rss_total
 
-    politician.stats.twitter.negative = twitter_negative
-    politician.stats.twitter.positive = twitter_positive
-    politician.stats.twitter.neutral = twitter_neutral
+      politician.stats.twitter.negative = twitter_negative
+      politician.stats.twitter.positive = twitter_positive
+      politician.stats.twitter.neutral = twitter_neutral
+      politician.stats.twitter.total = twitter_total
 
-    politician.stats.total_negative = total_negative;
-    politician.stats.total_positive = total_positive;
-    politician.stats.total_neutral = total_neutral;
-    politician.stats.total = total;
+      politician.stats.total_negative = total_negative;
+      politician.stats.total_positive = total_positive;
+      politician.stats.total_neutral = total_neutral;
+      politician.stats.total = total;
 
-    politician.stats.rss.save()  
-    politician.stats.save()
-    politician.save()     
-    """
+      politician.stats.rss.save()
+      politician.stats.twitter.save()  
+      politician.stats.save()
+      politician.save()     
+    
 
 
 @shared_task
