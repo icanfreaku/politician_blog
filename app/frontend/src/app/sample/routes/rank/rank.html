@@ -1,0 +1,26 @@
+<div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Gender</th>
+            <th>Constituency</th>
+            <th>Party</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="politician in politicians">  
+            <td>{{politician.first_name}}</td>
+            <td>{{politician.last_name}}</td>
+            <td>{{politician.gender}}</td>
+            <td>{{politician.constituency}}</td>
+            <td>{{politician.party}}</td>
+          </tr>
+        </tbody>
+    </table>
+</div>    
+
+
+
+
