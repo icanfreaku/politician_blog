@@ -64,17 +64,20 @@
                     </div>
                 </div>
             </div>
-            <div class="col-sm-4 top10">
+            <div class="col-sm-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">Top 10 most popular politicians</div>
                     <div class="panel-body">
                         <div class="list-group text-left">
-                          <a href="/politician/{{politician.slug}}" class="list-group-item" ng-repeat="politician in orderedPoliticians | limitTo:10">
-                            <span class="badge pull-left">{{$index+1}}</span>
-                            <img class="thumbnail" src="{{politician.photo_url}}" ng-if="politician.photo_url"/>
-                            <img class="thumbnail" src="http://findicons.com/files/icons/703/artists_valley_sample/128/business_man_blue.png" ng-if="!politician.photo_url"></span>
-                            <span>{{politician.first_name}} {{politician.last_name}}</span>
-                          </a>
+                            <a href="/politician/{{politician.slug}}" class="list-group-item" ng-repeat="politician in orderedPoliticians | limitTo:10">
+                                <span class="badge pull-left">{{$index+1}}</span>
+                                <img class="thumbnail" ng-src="{{politician.photo_url}}" fallback-src="{{'http://findicons.com/files/icons/703/artists_valley_sample/128/business_man_blue.png'}}" ng-if="politician.photo_url"/>
+                                <img class="thumbnail" src="http://findicons.com/files/icons/703/artists_valley_sample/128/business_man_blue.png" ng-if="!politician.photo_url"></span>
+                                <span>{{politician.first_name}} {{politician.last_name}}</span>
+                            </a>
+                            <div class="text-right see-more">
+                                <a href="/rank">See more...</a>
+                            </div>
                         </div>    
                     </div>
                 </div>
