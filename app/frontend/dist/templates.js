@@ -5,20 +5,83 @@ try {
   module = angular.module('myapp', []);
 }
 module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('sample/routes/about/about.html',
+    '<h1>About</h1>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('myapp');
+} catch (e) {
+  module = angular.module('myapp', []);
+}
+module.run(['$templateCache', function($templateCache) {
+  $templateCache.put('sample/routes/contact/contact.html',
+    '<h1>Contact</h1>');
+}]);
+})();
+
+(function(module) {
+try {
+  module = angular.module('myapp');
+} catch (e) {
+  module = angular.module('myapp', []);
+}
+module.run(['$templateCache', function($templateCache) {
   $templateCache.put('sample/routes/home/home.html',
     '<div class="row content">\n' +
     '    <div class="col-sm-12">\n' +
     '        <div class="row">\n' +
     '            <div class="col-sm-12">\n' +
-    '                <div class="jumbotron">\n' +
+    '                <!-- <div class="jumbotron">\n' +
     '                  <h1>Politician 360</h1>\n' +
     '                  <p>Where you can find current, meaningful and interesting information about your politicians. Look around and have fun!!</p>\n' +
-    '                </div>    \n' +
+    '                </div> --> \n' +
+    '                <div id="header-slider" class="carousel slide" data-ride="carousel">\n' +
+    '                    <ol class="carousel-indicators">\n' +
+    '                        <li data-target="#header-slider" data-slide-to="0" class="active"></li>\n' +
+    '                        <li data-target="#header-slider" data-slide-to="1"></li>\n' +
+    '                        <li data-target="#header-slider" data-slide-to="2"></li>\n' +
+    '\n' +
+    '                    </ol>\n' +
+    '                    <div class="carousel-inner" role="listbox">\n' +
+    '\n' +
+    '                        <!--                       image 1 on the slider-->\n' +
+    '                        <div class="item active">\n' +
+    '                            <img src="../../../../../../media/flag1.jpg" alt="Irish Flag" />\n' +
+    '                            <div class="carousel-caption">\n' +
+    '                                <h3>Ireland politics at a Glance</h3>\n' +
+    '                            </div>\n' +
+    '                        </div>\n' +
+    '                        <!--                        image2 on the slider-->\n' +
+    '                        <div class="item">\n' +
+    '                            <img src="../../../../../../media/image4.jpg" alt="Irish Flag" />\n' +
+    '                            <div class="carousel-caption">\n' +
+    '                                <h3>Team-Politician 360</h3>\n' +
+    '                            </div>\n' +
+    '                        </div>\n' +
+    '                        <!--                        image3 on the slider-->\n' +
+    '                        <div class="item">\n' +
+    '                            <img src="../../../../../../media/image5.jpg" alt="Irish Flag" />\n' +
+    '                            <div class="carousel-caption">\n' +
+    '                                <h3>All at one place</h3>\n' +
+    '                            </div>\n' +
+    '                        </div>\n' +
+    '                    </div>\n' +
+    '                    <a href="#header-slider" class="left carousel-control" role="button" data-slide="prev">\n' +
+    '                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>\n' +
+    '                    </a>\n' +
+    '\n' +
+    '                    <a href="#header-slider" class="right carousel-control" role="button" data-slide="next">\n' +
+    '                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>\n' +
+    '                    </a>\n' +
+    '                </div>  \n' +
     '            </div>\n' +
     '        </div>\n' +
     '        <div class="row">\n' +
     '            <div class="col-sm-4">\n' +
-    '                <div class="panel panel-default">\n' +
+    '                <div class="panel panel-warning">\n' +
     '                  <div class="panel-heading">Latest News Articles</div>\n' +
     '                  <div class="panel-body">\n' +
     '                    Panel content\n' +
@@ -26,7 +89,7 @@ module.run(['$templateCache', function($templateCache) {
     '                </div>\n' +
     '            </div>\n' +
     '            <div class="col-sm-4">\n' +
-    '                <div class="panel panel-default">\n' +
+    '                <div class="panel panel-warning">\n' +
     '                    <div class="panel-heading">Latest Tweets</div>\n' +
     '                    <div class="panel-body">\n' +
     '                        \n' +
@@ -34,7 +97,7 @@ module.run(['$templateCache', function($templateCache) {
     '                </div>\n' +
     '            </div>\n' +
     '            <div class="col-sm-4 top10">\n' +
-    '                <div class="panel panel-default">\n' +
+    '                <div class="panel panel-warning">\n' +
     '                    <div class="panel-heading">Top 10 most popular politicians</div>\n' +
     '                    <div class="panel-body">\n' +
     '                        <div class="list-group text-left">\n' +
@@ -56,30 +119,6 @@ module.run(['$templateCache', function($templateCache) {
     '\n' +
     '\n' +
     '');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('myapp');
-} catch (e) {
-  module = angular.module('myapp', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('sample/routes/about/about.html',
-    '<h1>About</h1>');
-}]);
-})();
-
-(function(module) {
-try {
-  module = angular.module('myapp');
-} catch (e) {
-  module = angular.module('myapp', []);
-}
-module.run(['$templateCache', function($templateCache) {
-  $templateCache.put('sample/routes/contact/contact.html',
-    '<h1>Contact</h1>');
 }]);
 })();
 

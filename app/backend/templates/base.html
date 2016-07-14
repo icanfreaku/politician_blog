@@ -11,13 +11,29 @@
     <link rel="stylesheet" href="{% static 'bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
     {# <link rel="stylesheet" href="{% static 'dist/bower.css' %}"> #}
     <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="shortcut icon" href="../../media/logo.png" />
 
     <style>
     /* Remove the navbar's default margin-bottom and rounded borders */
+     body {
+            background-color: darkgray;
+        }
+
     .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
+            background-color: #B94629;
+            margin-left: 13px;
+            margin-right: 13px;
+            border-radius: 5px;
+            margin-bottom: 0;
     }
+    #header-slider h3 {
+            color: brown;
+        }
+
+        .panel-warning > .panel-heading {
+            color: aquamarine;
+            background-color: firebrick;
+        }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {height: 450px}
@@ -31,10 +47,17 @@
     
     /* Set black background color, white text and some padding */
     footer {
-      background-color: #555;
-      color: white;
-      padding: 15px;
+            background-color: #3B3738;
+            color: white;
+            padding: 15px;
     }
+    .footerMain {
+            margin-left: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
     
     /* On small screens, set height to 'auto' for sidenav and grid */
     @media screen and (max-width: 767px) {
@@ -72,13 +95,15 @@
         {% block "content" %}{% endblock %}
     </div>
 
-    <footer class="container-fluid text-center">
-        <p>Footer Text</p>
+    <footer class="container-fluid text-center footerMain">
+       <p>&copy; Copyright 2016 All rights reserved | Developed and maintained by Team - Politician360</p>
     </footer>
+
 
     <script src="{% static 'bower.js' %}"></script>
     <script src="{% static 'app.js' %}"></script>
     <script src="{% static 'templates.js' %}"></script>
+    <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.js' %}"></script>
     <script>
         //insert livereload snippet on localhost TODO: on debug instead
         if(location.host.split(':')[0] === 'localhost' ) {

@@ -2,15 +2,54 @@
     <div class="col-sm-12">
         <div class="row">
             <div class="col-sm-12">
-                <div class="jumbotron">
+                <!-- <div class="jumbotron">
                   <h1>Politician 360</h1>
                   <p>Where you can find current, meaningful and interesting information about your politicians. Look around and have fun!!</p>
-                </div>    
+                </div> --> 
+                <div id="header-slider" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#header-slider" data-slide-to="0" class="active"></li>
+                        <li data-target="#header-slider" data-slide-to="1"></li>
+                        <li data-target="#header-slider" data-slide-to="2"></li>
+
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+
+                        <!--                       image 1 on the slider-->
+                        <div class="item active">
+                            <img src="../../../../../../media/flag1.jpg" alt="Irish Flag" />
+                            <div class="carousel-caption">
+                                <h3>Ireland politics at a Glance</h3>
+                            </div>
+                        </div>
+                        <!--                        image2 on the slider-->
+                        <div class="item">
+                            <img src="../../../../../../media/image4.jpg" alt="Irish Flag" />
+                            <div class="carousel-caption">
+                                <h3>Team-Politician 360</h3>
+                            </div>
+                        </div>
+                        <!--                        image3 on the slider-->
+                        <div class="item">
+                            <img src="../../../../../../media/image5.jpg" alt="Irish Flag" />
+                            <div class="carousel-caption">
+                                <h3>All at one place</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#header-slider" class="left carousel-control" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    </a>
+
+                    <a href="#header-slider" class="right carousel-control" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    </a>
+                </div>  
             </div>
         </div>
         <div class="row">
             <div class="col-sm-4">
-                <div class="panel panel-default">
+                <div class="panel panel-warning">
                   <div class="panel-heading">Latest News Articles</div>
                   <div class="panel-body">
                     Panel content
@@ -18,7 +57,7 @@
                 </div>
             </div>
             <div class="col-sm-4">
-                <div class="panel panel-default">
+                <div class="panel panel-warning">
                     <div class="panel-heading">Latest Tweets</div>
                     <div class="panel-body">
                         
@@ -26,7 +65,7 @@
                 </div>
             </div>
             <div class="col-sm-4 top10">
-                <div class="panel panel-default">
+                <div class="panel panel-warning">
                     <div class="panel-heading">Top 10 most popular politicians</div>
                     <div class="panel-body">
                         <div class="list-group text-left">
