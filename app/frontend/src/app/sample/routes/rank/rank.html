@@ -1,25 +1,88 @@
-<div>
-    <table class="table">
-        <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Gender</th>
-            <th>Constituency</th>
-            <th>Party</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="politician in politicians">  
-            <td>{{politician.first_name}}</td>
-            <td>{{politician.last_name}}</td>
-            <td>{{politician.gender}}</td>
-            <td>{{politician.constituency}}</td>
-            <td>{{politician.party}}</td>
-          </tr>
-        </tbody>
-    </table>
-</div>    
+<div class="row content rank">
+    <div class="col-sm-12" >
+        <div class="row">
+            <div class="col-sm-12">
+                <div>
+                    <nav class="navbar navbar-default">
+                        <div class="container-fluid">
+                            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                <form class="navbar-form navbar-left" role="search">                      
+                                    <div class="form-group rankby">
+                                        <label for="rankBy">Rank by</label>
+                                        <select class="form-control" id="rankBy" ng-model="rankBy" ng-change="rank()">
+                                            <option value="-stats.total">Popularity</option>
+                                            <option value="-stats.total_negative">Negative Sentiment</option>
+                                            <option value="-stats.total_positive">Positive Sentiment</option>
+                                            <option value="-stats.total_neutral">Neutral Sentiment</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group search">
+                                      <input type="text" class="form-control" placeholder="Search by name" ng-model="query">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                      </div>
+                    </nav>
+                    
+                </div>
+
+            </div>    
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="table-responsive rankTable">
+                    <table class="table text-left table-hover table-striped table-bordered table-condensed">
+                        <thead>
+                          <tr>
+                            <th>Rank #</th>
+                            <th>Politician</th>
+                            <th>Total of Mentions</th>
+                            <th>Total of Tweets</th>
+                            <th>Total of Articles</th>
+                            <th>Negative</th>
+                            <th>Positive</th>
+                            <th>Neutral</th>
+                          </tr>
+                        </thead>
+                        <tbody class="body">
+                          <tr ng-repeat="politician in politicians | startFrom:currentPage*pageSize | filter: search | limitTo:pageSize  as filtered" ng-click="go(politician)">  
+                            <td><span class="badge pull-left">{{politicians.indexOf(politician)+1}}</span></td>
+                            <td>
+                                <img class="thumbnail" ng-src="{{politician.photo_url}}" fallback-src="{{'http://findicons.com/files/icons/703/artists_valley_sample/128/business_man_blue.png'}}" ng-if="politician.photo_url"/>
+                                <img class="thumbnail" src="http://findicons.com/files/icons/703/artists_valley_sample/128/business_man_blue.png" ng-if="!politician.photo_url"></span>
+                                <span>{{politician.first_name}} {{politician.last_name}}</span>
+                            </td>
+                            <td>{{politician.stats.total}}</td>
+                            <td>{{politician.stats.rss.total}}</td>
+                            <td>{{politician.stats.twitter.total}}</td>
+                            <td>{{politician.stats.total_negative}}</td>
+                            <td>{{politician.stats.total_positive}}</td>
+                            <td>{{politician.stats.total_neutral}}</td>
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <nav>
+                  <ul class="pagination pagination-lg">
+                    <li ng-class="{'disabled': currentPage==0}">
+                      <a ng-click="changePage(currentPage-1);" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                      </a>
+                    </li>
+                    <li ng-repeat="i in numberOfPages track by $index" ng-class="{'active': currentPage==$index}"><a ng-click="changePage($index);">{{$index+1}}</a></li>
+                    <li ng-class="{'disabled': hasNext()}">
+                      <a ng-click="changePage(currentPage+1);" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>  
+            </div>    
+        </div>    
+    </div>    
+</div>
+   
 
 
 
