@@ -1,2 +1,81 @@
+<html>
+<head>
+<link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
+<link rel="stylesheet" media="screen" href="https://fonts.googleapis.com/css?family=Roboto" />
+<style>
+.container {
+    position: relative;
+}
+</style>
+</head>
+<body>
+<div class="content-wrapper bg-orange">
+  <div class="container">
+    <div class="col-xs-12 candidates-header">
+    </div>
+  </div>
+</div>
+<div class="content-wrapper bg-grey-white" align="left">
+  <div class="container">
+    <div class="col-xs-12 container single-candidate">
+      <h1><font color="#FF8000">Candidate</font></h1>
+      <div class="col-md-4">
+        <div class="candidate-pic">
+					<img class="thumbnail" src="{{politicianData.photo_url}}" ng-if="politicianData.photo_url"/>
+          <img class="thumbnail" src="http://findicons.com/files/icons/703/artists_valley_sample/128/business_man_blue.png" ng-if="!politician.photo_url"></span>
 
-<span>{{politicianData.first_name}} {{politicianData.last_name}}</span>
+        </div>
+        <div class="candidate-details">
+          <h4>Name</h4>
+          <h5>{{politicianData.first_name}} {{politicianData.last_name}}</h5>
+          <h4>Gender</h4>
+          <h5>{{politicianData.gender}}</h5>
+        	  </div>
+      </div>
+      <div class="col-md-4">
+        <h4>Party</h4>
+        <h5>{{politicianData.party}}</h5>
+        <h4>Constituency</h4>
+        <h5>{{politicianData.constituency}}</h5>
+        <h4>Official Party Website</h4>
+        <h5>{{politicianData.party_profile_url}}</h5>
+
+      </div>
+      <div class="col-md-4 candidate-contacts">
+        <h4>Contact</h4>
+        <h5>t: <a href="{{politicianData.phone_1}}">{{politicianData.phone_2}}</a></h5>
+        <h5>t: <a href="{{politicianData.phone_2}}"></a>{{politicianData.phone_2}}</h5>
+        <h5>e: <a href="mailto:{{politicianData.email}}">{{politicianData.email}}</a></h5>
+        <h5>w: <a href="{{politicianData.website_url}}">{{politicianData.website_url}}</a></h5>
+        <h4>Social</h4>
+				<div class="socicon">
+					<ul class="socicon-list">
+						<li><a style="text-decoration: none" class="socicon-twitter" href="{{politicianData.twitter_url}}"></a></li>
+    				<li><a style="text-decoration: none" class="socicon-facebook" href="{{politicianData.facebook_url}}"></a>&nbsp;</li>
+    				<li><a style="text-decoration: none" class="socicon-linkedin" href="{{polticianData.linkedin_url}}"></a>&nbsp;</li>
+    				<li><a style="text-decoration: none" class="socicon-youtube" href="{{polticianData.youtube_url}}"></a>&nbsp;</li>
+    				<li><a style="text-decoration: none" class="socicon-instagram" href="{{politicianData.instagram_url}}"></a></li>
+       		</ul>
+		  	</div>
+			</div>
+    </div>
+		<div class="row">
+					<div class="col-sm-4">
+							<div class="panel panel-default">
+								<div class="panel-heading">Latest News Articles</div>
+								<div class="panel-body">
+									Panel content
+								</div>
+							</div>
+					</div>
+					<div class="col-sm-4">
+							<div class="panel panel-default">
+									<div class="panel-heading">Latest Tweets</div>
+									<div class="panel-body">
+									</div>
+							</div>
+					</div>
+  </div>
+</div>
+</body>
+</html>
