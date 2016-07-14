@@ -15,12 +15,7 @@
 
     <style>
     /* Remove the navbar's default margin-bottom and rounded borders */
-     body {
-            background-color: darkgray;
-        }
-
     .navbar {
-            background-color: #B94629;
             margin-left: 13px;
             margin-right: 13px;
             border-radius: 5px;
@@ -29,25 +24,13 @@
     #header-slider h3 {
             color: brown;
         }
-
-        .panel-warning > .panel-heading {
-            color: aquamarine;
-            background-color: firebrick;
-        }
     
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
     .row.content {height: 450px}
-    
-    /* Set gray background color and 100% height */
-    .sidenav {
-      padding-top: 20px;
-      background-color: #f1f1f1;
-      height: 100%;
-    }
-    
+
     /* Set black background color, white text and some padding */
     footer {
-            background-color: #3B3738;
+            background-color: #555;
             color: white;
             padding: 15px;
     }
@@ -103,7 +86,6 @@
     <script src="{% static 'bower.js' %}"></script>
     <script src="{% static 'app.js' %}"></script>
     <script src="{% static 'templates.js' %}"></script>
-    <script src="{% static 'bower_components/bootstrap/dist/js/bootstrap.js' %}"></script>
     <script>
         //insert livereload snippet on localhost TODO: on debug instead
         if(location.host.split(':')[0] === 'localhost' ) {
