@@ -16,6 +16,8 @@ var gulp = require('gulp'),
     livereload = require('gulp-livereload'),
     plumber = require('gulp-plumber'),
     babelify = require('babelify');
+    gutil = require('gulp-util');
+    babel = require('gulp-babel');
 
 
 var NG_MODULE_NAME = 'myapp';
@@ -121,7 +123,8 @@ gulp.task('copy-images', function () {
 gulp.task('uglify',  function () {
     return gulp.src('./dist/*.js')
         .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(uglify())
+        .pipe(babel({presets: ['es2015']}))
+        .pipe(uglify().on('error', gutil.log))
         .pipe(sourcemaps.write('maps'))
         .pipe(gulp.dest('./dist/'));
 });
