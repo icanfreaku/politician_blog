@@ -2,7 +2,7 @@
 layout: post
 title: Fifth Blog
 categories: blog
-Author: MOHD FAISAL RAZA  
+author: MOHD FAISAL RAZA  
 ---
 
 ## Project Update:

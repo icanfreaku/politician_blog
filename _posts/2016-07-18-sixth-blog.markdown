@@ -2,7 +2,7 @@
 layout: post
 title: Sixth Blog
 categories: blog
-Author: Sumitha Dhanasekaran
+author: Sumitha Dhanasekaran
 ---
 
 # Sixth Blog Post - With a Working Prototype
