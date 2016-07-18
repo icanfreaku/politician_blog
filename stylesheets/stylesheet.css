@@ -284,3 +284,11 @@ a:hover {
   .sharing-buttons {
     max-width: 80%;
     margin: 0 auto;} }
+
+
+header {
+        background: url(/img/cover.jpg) center center;
+        background-size: cover;
+        display: block;
+        
+    }
