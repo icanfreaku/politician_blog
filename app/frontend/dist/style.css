@@ -1,0 +1,48 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+a {
+  cursor: pointer;
+}
+.slideshow {
+  margin-top: 15px;
+}
+.news {
+  margin-top: 15px;
+}
+.socicon .socicon-list {
+  font-size: 27px;
+}
+.socicon .socicon-list li {
+  display: inline;
+}
+.socicon .socicon-list li a:hover i {
+  text-decoration: none;
+}
+.thumbnail {
+  width: 50px;
+  height: 50px;
+  display: inline;
+  margin: 0px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.rank .body tr {
+  cursor: pointer;
+}
+.rank .navbar {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.rank .navbar .navbar-form .search {
+  margin-left: 15px;
+}
+.rank .rankTable {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.see-more {
+  margin: 15px;
+  font-size: 20px;
+}

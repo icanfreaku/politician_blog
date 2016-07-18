@@ -5,11 +5,11 @@ categories: blog
 Author: Sumitha Dhanasekaran
 ---
 
-#Sixth Blog Post - With a Working Prototype
+# Sixth Blog Post - With a Working Prototype
 
 As mentioned in the previous posts, we have three main MVPs that we are concentrating on. And as mentioned earlier we are currently towards the end of implementation phase of the first MVP and have started working halfway through the Second MVP as well.
 
-##Progress update:
+## Progress update:
 
 We currently have a working prototype ready with the Home Page, Candidate Information page and Rank page implemented. Data Connectivity between pages and backend are done as well where we are getting the data for the candidates from open database.
 
