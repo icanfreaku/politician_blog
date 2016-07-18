@@ -2,7 +2,7 @@
 layout: post
 title: Sixth Blog
 categories: blog
-Author: SUMITHA DHANASEKARAN 
+Author: Sumitha Dhanasekaran
 ---
 
 #Sixth Blog Post - With a Working Prototype
@@ -15,7 +15,7 @@ We currently have a working prototype ready with the Home Page, Candidate Inform
 
 ### We have designed our home page as below. - Politician 360 Team Home Page
 
-![alt text] (https://trello-attachments.s3.amazonaws.com/578bfa5f24e79699ef3b0505/2560x1600/c2265b0f69583f6219e8ed52958a51aa/Screen_Shot_2016-07-18_at_01.11.04.png)
+![alt text](https://trello-attachments.s3.amazonaws.com/578bfa5f24e79699ef3b0505/2560x1600/c2265b0f69583f6219e8ed52958a51aa/Screen_Shot_2016-07-18_at_01.11.04.png)
 
 ### Rank Page
 
@@ -33,23 +33,23 @@ The rank page ranks and lists the candidates on various basis such as popularity
 
 + Ranking by negative sentiments
 
-! [alt text] (https://trello-attachments.s3.amazonaws.com/578bfa5f24e79699ef3b0505/2560x1600/9d2f0d812b8c1ea66aa4778de5ef8fd9/Screen_Shot_2016-07-18_at_01.22.11.png)
+![alt text](https://trello-attachments.s3.amazonaws.com/578bfa5f24e79699ef3b0505/2560x1600/9d2f0d812b8c1ea66aa4778de5ef8fd9/Screen_Shot_2016-07-18_at_01.22.11.png)
 
 + Ranking by neutral sentiments
 
-![alt text] (https://trello-attachments.s3.amazonaws.com/578bfa5f24e79699ef3b0505/2560x1600/3109cda1870c4fe276d1873f439897d6/Screen_Shot_2016-07-18_at_01.22.06.png)
+![alt text](https://trello-attachments.s3.amazonaws.com/578bfa5f24e79699ef3b0505/2560x1600/3109cda1870c4fe276d1873f439897d6/Screen_Shot_2016-07-18_at_01.22.06.png)
 
 + Search by name Feature implemented
 
-![alt text] (https://trello-attachments.s3.amazonaws.com/578bfa5f24e79699ef3b0505/2560x1600/2c6cc991453a6f2272682e06063032e0/Screen_Shot_2016-07-18_at_01.35.36.png)
+![alt text](https://trello-attachments.s3.amazonaws.com/578bfa5f24e79699ef3b0505/2560x1600/2c6cc991453a6f2272682e06063032e0/Screen_Shot_2016-07-18_at_01.35.36.png)
 
 ### Candidate Details Page
 
 Candidate information page appears when a user wants to detailed information specific to a candidate in a list. It lists a picture of the candidate along with contact information and social profile links. The page also displays latest tweets and articles by the candidate.
 
-![alt text] ()
+![alt text]()
 
-#### Regarding the User Evaluation plan 
+### Regarding the User Evaluation plan 
 
 Further regarding the user evaluation plan, Question list and the process for the evaluation were discussed and the list is prepared.
 We have planned to promote the Poltician360 Website on social media sites and generate a survey asking a certain set of questions and requesting participants to perform certain tasks to evaluate the user experience.
@@ -60,5 +60,5 @@ We have planned to promote the Poltician360 Website on social media sites and ge
 
 + We are working on listing the tweets and articles on the homepage and candidate page. We have so far succeeded in extracting the tweets. We are hoping to list it with a link on the homepage in a couple of days.
 
-+
++ On progressing with the MVP 2, we are planning to move quickly to the third MVP by the coming weeks.
 
