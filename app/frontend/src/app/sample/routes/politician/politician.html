@@ -21,9 +21,8 @@
       <h1><font color="#FF8000">Candidate</font></h1>
       <div class="col-md-4">
         <div class="candidate-pic">
-					<img class="thumbnail" src="{{politicianData.photo_url}}" ng-if="politicianData.photo_url"/>
-          <img class="thumbnail" src="http://findicons.com/files/icons/703/artists_valley_sample/128/business_man_blue.png" ng-if="!politician.photo_url"></span>
-
+          <img class="thumbnail" ng-src="{{politicianData.photo_url}}" fallback-src="{{'http://findicons.com/files/icons/703/artists_valley_sample/128/business_man_blue.png'}}" ng-if="politicianData.photo_url"/>
+          <img class="thumbnail" src="http://findicons.com/files/icons/703/artists_valley_sample/128/business_man_blue.png" ng-if="!politicianData.photo_url"></span>
         </div>
         <div class="candidate-details">
           <h4>Name</h4>
@@ -38,7 +37,7 @@
         <h4>Constituency</h4>
         <h5>{{politicianData.constituency}}</h5>
         <h4>Official Party Website</h4>
-        <h5>{{politicianData.party_profile_url}}</h5>
+        <h5><a href="{{politicianData.party_profile_url}}">{{polticianData.party}}</a></h5>
 
       </div>
       <div class="col-md-4 candidate-contacts">
